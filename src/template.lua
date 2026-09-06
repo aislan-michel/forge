@@ -5,7 +5,7 @@ function template.get_templates()
 end
 
 function template.exists(template_name)
-    if not template_name then
+    if template_name == nil then
         return false
     end
 

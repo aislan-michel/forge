@@ -2,16 +2,27 @@ local template = require("template")
 
 local new = {}
 
+local function get_template_name(args)
+    local template_name = nil
+
+    for index, arg in ipairs(args) do
+        if arg == "--template" then
+            template_name = args[index + 1]
+        end
+    end
+
+    return template_name
+end
+
 function new.create_project(args)
     local project_name = args[1]
-    local template_name = args[3]
-
+    local template_name = get_template_name(args)
     local response = ""
+
     if project_name == nil then
         response = "Please specify a project name\n"
     else
         response = "Creating new project: " .. project_name .. "\n"
-        -- Here you would add the logic to create a new project
     end
 
     if template_name == nil then
