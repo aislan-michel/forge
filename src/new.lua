@@ -8,7 +8,7 @@ function new.create_project(args)
     if parsed_args.success == true then
         return "Creating new project: " .. parsed_args.args.project_name .. "\n" .. "Using template: " .. parsed_args.args.template .. "\n"
     else
-        return table.concat(parsed_args.problems, ", ")
+        return table.concat(parsed_args.problems, "\n")
     end
 
 end

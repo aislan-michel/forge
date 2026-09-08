@@ -30,9 +30,7 @@ function parser.parse_args(args)
     local project_name = args[1]
     
     if project_name == nil then
-        response.success = false
         table.insert(response.problems, "Please specify a project name")
-        return response
     end
 
     local template_arg = get_template(args)
